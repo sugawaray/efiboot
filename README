@@ -1,0 +1,4 @@
+* ABOUT THIS TOOL
+
+This tool executes an elf binary in the UEFI SHELL.
+The name of the elf binary must be 'test.elf'.

@@ -1,0 +1,12 @@
+*.o
+*.so
+*.to
+*.efi
+.*
+/ltest
+/loadscts_test
+/utest
+/elfsample
+/test.elf
+/execelf
+!.gitignore

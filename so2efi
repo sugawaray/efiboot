@@ -1,0 +1,13 @@
+#! /bin/sh -
+if [ $# -ne 2 ]
+then
+	echo "invalid arguments."
+	exit 1
+fi
+target="${1}"
+shift
+optsec="-j .text -j .sdata -j .data -j .dynamic -j .dynsym -j .rel -j .rela -j .reloc"
+optsecdbg="-j .debug_info -j .debug_abbrev -j .debug_loc -j .debug_aranges -j .debug_line -j .debug_macinfo -j .debug_str"
+objcopy $optsec --target=efi-app-ia32 "${@}" "${target}"
+objcopy $optsec $optsecdbg --target=efi-app-ia32 "${@}" dbg"${target}"
+
